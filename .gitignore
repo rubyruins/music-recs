@@ -1,4 +1,6 @@
-10000.txt
-song_data.csv
+data
 songs.csv
 songs_grouped.csv
+.ipynb_checkpoints
+env
+__pycache__
