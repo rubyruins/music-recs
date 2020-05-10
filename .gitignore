@@ -1,6 +1,5 @@
 # Entire songs dataset
 data
-songs_merged_100000.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
