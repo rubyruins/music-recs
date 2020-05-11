@@ -3,6 +3,31 @@ import tkinter as tkinter
 import pandas as pd   #to extract data from exel
 import Recommenders
 
+
+def popnum(T,pop):
+   num=0
+   try:
+      num = int(T.get("1.0", "end"))
+      scrollbar = Scrollbar(pop)
+      scrollbar.pack(side=RIGHT, fill=Y)
+      # import dataset
+      dataset = pd.read_csv("songs_merged_100000.csv")
+      mylist = Listbox(pop, yscrollcommand=scrollbar.set, bg="#28373c", fg="white",
+                       font=("times new roman", 16, "italic"))
+      X = dataset.iloc[:50, 4:].values
+      print("")
+      for i in range(num):
+         mylist.insert(END, (i + 1), X[i][0], X[0][1], X[0][2], X[0][4])
+         mylist.insert(END, "___________________________________________________________")
+
+      print(mylist)
+      mylist.place(x=20, y=85, width=450, height=545)
+      scrollbar.config(command=mylist.yview, background="#28373c")
+   except:
+      T.insert(END,"Enter integer only")
+
+
+
 def popularity():
    pop=Tk()
    pop.config(background="#28373c")
@@ -10,23 +35,13 @@ def popularity():
    pop.geometry("500x650")
 
    background = LabelFrame(pop, text="Trending songs of the week",font=("times new roman", 15, "italic"),fg="white",bg="#28373c")
-   background.place(x=10, y=10, width=480, height=700)
-   scrollbar = Scrollbar(pop)
-   scrollbar.pack(side=RIGHT, fill=Y)
-   # import dataset
-   dataset = pd.read_csv("songs_merged_100000.csv")
-   mylist = Listbox(pop, yscrollcommand=scrollbar.set, bg="#28373c", fg="white", font=("times new roman", 16, "italic"))
-   pm = Recommenders.popularity_recommender_py()
-   pm.create(dataset, 'user_id', 'name')
-   X = pm.recommend(10).values
-   print("___________________________________________________________")
-   for i in range(10):
-      mylist.insert(END, "Trending #",(i+1),"Record title:",X[i][0],"No. of hits:",X[i][1])
-      mylist.insert(END, "-----------------------------------------------------------------------")
+   background.place(x=10, y=10, width=480, height=630)
+   T = Text(pop, height=1, width=35, font=("times new roman", 15))
+   T.place(x=30, y=40)
+   T.insert(END, "Enter Number of Songs ")
+   btn1 = Button(pop, text='Search', bg="#28373c", command=lambda: popnum(T, pop), fg="white")
+   btn1.place(x=410, y=40, height=40, width=60)
 
-   print(mylist)
-   mylist.place(x=20,y=35,width=450,height=600)
-   scrollbar.config(command=mylist.yview,background="#28373c")
    pop.mainloop()
 
 def sim(T,pop):
