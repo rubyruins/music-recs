@@ -18,7 +18,7 @@ def popnum(T,pop):
       pm.create(dataset, 'user_id', 'name')
       X = pm.recommend(10).values
       print("___________________________________________________________")
-      for i in range(10):
+      for i in range(0, num):
           mylist.insert(END, "Trending #",(i+1),"Record title:",X[i][0],"No. of hits:",X[i][1])
           mylist.insert(END, "-----------------------------------------------------------------------")
 
