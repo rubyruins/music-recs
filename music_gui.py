@@ -14,18 +14,19 @@ def popnum(T,pop):
       dataset = pd.read_csv("songs_merged_100000.csv")
       mylist = Listbox(pop, yscrollcommand=scrollbar.set, bg="#28373c", fg="white",
                        font=("times new roman", 16, "italic"))
-      X = dataset.iloc[:50, 4:].values
-      print("")
-      for i in range(num):
-         mylist.insert(END, (i + 1), X[i][0], X[0][1], X[0][2], X[0][4])
-         mylist.insert(END, "___________________________________________________________")
+      pm = Recommenders.popularity_recommender_py()
+      pm.create(dataset, 'user_id', 'name')
+      X = pm.recommend(10).values
+      print("___________________________________________________________")
+      for i in range(10):
+          mylist.insert(END, "Trending #",(i+1),"Record title:",X[i][0],"No. of hits:",X[i][1])
+          mylist.insert(END, "-----------------------------------------------------------------------")
 
       print(mylist)
       mylist.place(x=20, y=85, width=450, height=545)
       scrollbar.config(command=mylist.yview, background="#28373c")
    except:
       T.insert(END,"Enter integer only")
-
 
 
 def popularity():
