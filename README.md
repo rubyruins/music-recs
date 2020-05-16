@@ -22,7 +22,7 @@ Considering what you liked in the past, what other similar song that you will li
 ## Tech Stack:
 1. Interface: GUI built using Tkinter library.
 2. Preprocessing: Done using pandas and numpy libraries to clean and prepare the dataset.
-3. Prediction: Scikit-learn library used for splitting the training set and evaluation metrics/
+3. Prediction: Scikit-learn library used for splitting the training set and evaluation metrics.
 
 ## Dataset used | [The Million Song Dataset:](http://millionsongdataset.com/)
 The Million Song Dataset is a freely-available collection of audio features and metadata for a million contemporary popular music tracks.
