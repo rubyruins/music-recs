@@ -16,9 +16,9 @@ def popnum(T,pop):
                        font=("times new roman", 16, "italic"))
       pm = Recommenders.popularity_recommender_py()
       pm.create(dataset, 'user_id', 'name')
-      X = pm.recommend(10).values
+      X = pm.recommend(num).values
       print("___________________________________________________________")
-      for i in range(0, num):
+      for i in range(10):
           mylist.insert(END, "Trending #",(i+1),"Record title:",X[i][0],"No. of hits:",X[i][1])
           mylist.insert(END, "-----------------------------------------------------------------------")
 
@@ -27,7 +27,6 @@ def popnum(T,pop):
       scrollbar.config(command=mylist.yview, background="#28373c")
    except:
       T.insert(END,"Enter integer only")
-
 
 def popularity():
    pop=Tk()
@@ -44,9 +43,10 @@ def popularity():
    btn1.place(x=410, y=40, height=40, width=60)
 
    pop.mainloop()
-
+   
 def sim(T,pop):
    song_id=T.get("1.0", "end")
+   l = list(song_id.split(","))
    scrollbar = Scrollbar(pop)
    scrollbar.pack(side=RIGHT, fill=Y)
    print("heloo")
@@ -55,11 +55,11 @@ def sim(T,pop):
    mylist = Listbox(pop, yscrollcommand=scrollbar.set, bg="#28373c", fg="white", font=("times new roman", 16, "italic"))
    is_model = Recommenders.item_similarity_recommender_py()
    is_model.create(dataset, 'user_id', 'name')
-   df = is_model.get_similar_items(song_id)
+   df = is_model.get_similar_items(l)
    X = df.values
    print("___________________________________________________________")
    for i in range(len(df)):
-      mylist.insert(END, (i+1), X[i][1])
+      mylist.insert(END, (i+1), X[i][1], X[i][2])
       mylist.insert(END, "______________________________________________________________")
 
    print(mylist)
@@ -121,4 +121,3 @@ if __name__ == "__main__":
 
 
    root.mainloop()
- 
