@@ -3,7 +3,6 @@ import tkinter as tkinter
 import pandas as pd   #to extract data from exel
 import Recommenders
 
-
 def popnum(T,pop):
    num=0
    try:
@@ -11,7 +10,7 @@ def popnum(T,pop):
       scrollbar = Scrollbar(pop)
       scrollbar.pack(side=RIGHT, fill=Y)
       # import dataset
-      dataset = pd.read_csv("songs_merged_100000.csv")
+      dataset = pd.read_csv("songs_merged_20000.csv")
       mylist = Listbox(pop, yscrollcommand=scrollbar.set, bg="#28373c", fg="white",
                        font=("times new roman", 16, "italic"))
       pm = Recommenders.popularity_recommender_py()
@@ -51,7 +50,7 @@ def sim(T,pop):
    scrollbar.pack(side=RIGHT, fill=Y)
    print("heloo")
    # import dataset
-   dataset = pd.read_csv("songs_merged_100000.csv")
+   dataset = pd.read_csv("songs_merged_20000.csv")
    mylist = Listbox(pop, yscrollcommand=scrollbar.set, bg="#28373c", fg="white", font=("times new roman", 16, "italic"))
    is_model = Recommenders.item_similarity_recommender_py()
    is_model.create(dataset, 'user_id', 'name')
@@ -101,7 +100,7 @@ if __name__ == "__main__":
    background_label = Label(root, image=filename)
    background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
-   trackframe = Label(root, text="  Welcome back Music Lover ! ", font=("times new roman", 25, "bold"), bg="#28373c", fg="white",
+   trackframe = Label(root, text="  Welcome back, Music Lover! ", font=("times new roman", 25, "bold"), bg="#28373c", fg="white",
                            bd=1)
    trackframe.place(x=10, y=20, width=430, height=50)
    file = PhotoImage(file="button1.PNG")
@@ -118,6 +117,4 @@ if __name__ == "__main__":
                       bd=1)
    track.place(x=15, y=755, width=640, height=50)
    
-
-
    root.mainloop()
