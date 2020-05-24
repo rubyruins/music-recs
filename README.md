@@ -22,7 +22,6 @@ Considering what you liked in the past, what other similar song that you will li
 ## Tech Stack:
 1. Interface: GUI built using Tkinter library.
 2. Preprocessing: Done using pandas and numpy libraries to clean and prepare the dataset.
-3. Prediction: Scikit-learn library used for splitting the training set and evaluation metrics.
 
 ## Screenshots:
 <img src="https://github.com/rubyruins/music-recs/blob/master/screenshots/music_interface.PNG" height="300">    <img src="https://github.com/rubyruins/music-recs/blob/master/screenshots/popular.PNG" height="300">    <img src="https://github.com/rubyruins/music-recs/blob/master/screenshots/similar.PNG" height="300">
