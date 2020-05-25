@@ -24,7 +24,7 @@ Considering what you liked in the past, what other similar song that you will li
 2. Preprocessing: Done using pandas and numpy libraries to clean and prepare the dataset.
 
 ## Screenshots:
-<img src="https://github.com/rubyruins/music-recs/blob/master/screenshots/music_interface.PNG" height="300">    <img src="https://github.com/rubyruins/music-recs/blob/master/screenshots/popular.PNG" height="300">    <img src="https://github.com/rubyruins/music-recs/blob/master/screenshots/similar.PNG" height="300">
+<img src="https://github.com/rubyruins/music-recs/blob/master/screenshots/music_interface.PNG" height="300">    <img src="https://github.com/rubyruins/music-recs/blob/master/screenshots/popular_updated.PNG" height="300">    <img src="https://github.com/rubyruins/music-recs/blob/master/screenshots/similar_updated.PNG" height="300">
 
 ## Dataset used | [The Million Song Dataset:](http://millionsongdataset.com/)
 The Million Song Dataset is a freely-available collection of audio features and metadata for a million contemporary popular music tracks.
