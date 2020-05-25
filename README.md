@@ -29,6 +29,14 @@ Considering what you liked in the past, what other similar song that you will li
 ## Dataset used | [The Million Song Dataset:](http://millionsongdataset.com/)
 The Million Song Dataset is a freely-available collection of audio features and metadata for a million contemporary popular music tracks.
 
+## Installation:
+**You must have Python 3.6 or higher to run the file.**
+
+- Create a new virtual environment for running the application. You can follow the instructions [here.](https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virtual-env/)
+- Navigate to the virtual environment and activate it.
+- Install the dependancies using `pip install -r requirements.txt`
+- Run the `music_gui.py` file with `python music_gui.py`
+
 #### This is a desktop application built for our Python Programming project.
 
 Made with 💖 by [Soumya Parekh](https://github.com/rubyruins), [Kanksha Pandey](https://github.com/KankshaP) and [Ankita Shelke](https://github.com/as959).
