@@ -17,7 +17,7 @@ def popnum(T,pop):
       pm.create(dataset, 'user_id', 'name')
       X = pm.recommend(num).values
       print("___________________________________________________________")
-      for i in range(10):
+      for i in range(num):
           mylist.insert(END, "Trending #",(i+1),"Record title:",X[i][0],"No. of hits:",X[i][1])
           mylist.insert(END, "-----------------------------------------------------------------------")
 
@@ -26,6 +26,7 @@ def popnum(T,pop):
       scrollbar.config(command=mylist.yview, background="#28373c")
    except:
       T.insert(END,"Enter integer only")
+
 
 def popularity():
    pop=Tk()
@@ -58,7 +59,7 @@ def sim(T,pop):
    X = df.values
    print("___________________________________________________________")
    for i in range(len(df)):
-      mylist.insert(END, (i+1), X[i][1], X[i][2])
+      mylist.insert(END, (i+1), X[i][1])
       mylist.insert(END, "______________________________________________________________")
 
    print(mylist)
