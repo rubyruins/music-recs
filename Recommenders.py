@@ -45,8 +45,6 @@ class item_similarity_recommender_py():
 		self.user_id = None
 		self.item_id = None
 		self.cooccurence_matrix = None
-		self.songs_dict = None
-		self.rev_songs_dict = None
 		self.item_similarity_recommendations = None
 
 	# Create the item similarity based recommender system model
@@ -95,8 +93,7 @@ class item_similarity_recommender_py():
 
 	# Use the cooccurence matrix to make top recommendations
 	def generate_top_recommendations(self, user, cooccurence_matrix, all_songs, user_songs):
-		print("Non zero values in cooccurence_matrix :%d" % np.count_nonzero(cooccurence_matrix))
-		# Calculate a weighted average of the scores in cooccurence matrix for all user songs.
+		# Calculate the average of the scores in cooccurence matrix for all user songs.
 		user_sim_scores = cooccurence_matrix.sum(axis=0)/float(cooccurence_matrix.shape[0])
 		user_sim_scores = np.array(user_sim_scores)[0].tolist()
  
